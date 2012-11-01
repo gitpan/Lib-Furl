@@ -1,4 +1,4 @@
-/* $Id: Furl.xs 2 2012-10-25 13:25:37Z gomor $ */
+/* $Id: Furl.xs 4 2012-11-01 17:05:56Z gomor $ */
 
 /*
  */
@@ -18,38 +18,102 @@ PROTOTYPES: DISABLE
 
 FurlHandler *
 furl_init()
-   CODE:
-      RETVAL = furl_init();
-   OUTPUT:
-      RETVAL
 
 char *
 furl_get_version()
-   CODE:
-      RETVAL = furl_get_version();
-   OUTPUT:
-      RETVAL
 
 int
 furl_decode(fh, url, url_size)
       FurlHandler *fh
-      char *url
+      const char *url
       int url_size
-   CODE:
-      RETVAL = furl_decode(fh, (const char *)url, (const size_t)url_size);
-   OUTPUT:
-      RETVAL
 
 void
 furl_show(fh, sep_char, out)
       FurlHandler *fh
       char sep_char
       FILE *out
-   CODE:
-      furl_show(fh, (const char)sep_char, (FILE *)out);
 
 void
 furl_terminate(fh)
       FurlHandler *fh
-   CODE:
-      furl_terminate(fh);
+
+int
+furl_get_scheme_pos(fh)
+      FurlHandler *fh
+
+int
+furl_get_scheme_size(fh)
+      FurlHandler *fh
+
+int
+furl_get_credential_pos(fh)
+      FurlHandler *fh
+
+int
+furl_get_credential_size(fh)
+      FurlHandler *fh
+
+int
+furl_get_subdomain_pos(fh)
+      FurlHandler *fh
+
+int
+furl_get_subdomain_size(fh)
+      FurlHandler *fh
+
+int
+furl_get_domain_pos(fh)
+      FurlHandler *fh
+
+int
+furl_get_domain_size(fh)
+      FurlHandler *fh
+
+int
+furl_get_host_pos(fh)
+      FurlHandler *fh
+
+int
+furl_get_host_size(fh)
+      FurlHandler *fh
+
+int
+furl_get_tld_pos(fh)
+      FurlHandler *fh
+
+int
+furl_get_tld_size(fh)
+      FurlHandler *fh
+
+int
+furl_get_port_pos(fh)
+      FurlHandler *fh
+
+int
+furl_get_port_size(fh)
+      FurlHandler *fh
+
+int
+furl_get_resource_path_pos(fh)
+      FurlHandler *fh
+
+int
+furl_get_resource_path_size(fh)
+      FurlHandler *fh
+
+int
+furl_get_query_string_pos(fh)
+      FurlHandler *fh
+
+int
+furl_get_query_string_size(fh)
+      FurlHandler *fh
+
+int
+furl_get_fragment_pos(fh)
+      FurlHandler *fh
+
+int
+furl_get_fragment_size(fh)
+      FurlHandler *fh
